@@ -3,8 +3,7 @@
 <head>
   <meta charset="utf-8">
   <title>Animation</title>
-  <script src="./app.js"></script>
-  <script src="./bot.js"></script>
+  <script src="./index.js" type="module" async defer></script>
   <link rel="stylesheet" href="//unpkg.com/normalize.css@8.0.0/normalize.css">
   <link rel="stylesheet" href="./style.css" type="text/css">
 
@@ -15,8 +14,7 @@
   </div>
   <aside>
     <header>
-      <h1>evolutionary</h1>
-    </header>
+      <h1>Evolutionary</h1>
     <menu>
       <button type="button" id="restartButton">restart</button>
       <button type="button" id="flowControl">pause/run</button>
@@ -26,52 +24,9 @@
       </label>
       <button type="button">not used</button>
     </menu>
-    <section></section>
+    </header>
+    <section id="botsList"></section>
   </aside>
 </section>
-
 </body>
-<script>
-  window.onload = function () {
-    const CanvasParameters = {
-      width:  800,
-      height: 800,
-    };
-    const canvasWrapper = document.getElementById("canvas");
-    const evolution = new Evolution({maxBotsAmount: 10, getCanvas});
-
-    document.getElementById('restartButton').addEventListener('click', () => evolution.main());
-    document.getElementById('flowControl').addEventListener('click', () => evolution.pauseResume());
-    document.getElementById('tick').addEventListener('change', (e) => evolution.setTick(e.target.value));
-
-    evolution.main();
-
-    function getCanvas(){
-      const canvas = document.createElement('canvas');
-      canvas.width  = CanvasParameters.width;
-      canvas.height = CanvasParameters.height;
-      canvasWrapper.appendChild(canvas);
-
-      return canvas;
-
-/*
-      const context = canvas.getContext("2d");
-      return {
-
-        clear: function(rect) {
-          const {
-            x = 0,
-            y = 0,
-            w = CanvasParameters.width,
-            h = CanvasParameters.height,
-                } = rect;
-
-          context.clearRect(x, y, w, h);
-        },
-
-      };
-*/
-    }
-  };
-</script>
 </html>
