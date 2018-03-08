@@ -1,27 +1,32 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>Animation</title>
-    <script type="text/javascript" src="Bot.js"></script>
-    <style>
-    body{
-      background-color: powderblue;
-    }
-    canvas{
-      background-color: white;
-      border: 4px solid black;
-      margin-top: 20px ;
-    }
+<head>
+  <meta charset="utf-8">
+  <title>Animation</title>
+  <script src="./index.js" type="module" async defer></script>
+  <link rel="stylesheet" href="//unpkg.com/normalize.css@8.0.0/normalize.css">
+  <link rel="stylesheet" href="./style.css" type="text/css">
 
+</head>
+<body>
+<section class="wrapper">
+  <div class="canvas-wrapper" id="canvas">
+  </div>
+  <aside>
+    <header>
+      <h1>Evolutionary</h1>
+    <menu>
+      <button type="button" id="restartButton">restart</button>
+      <button type="button" id="flowControl">pause/run</button>
 
-
-    </style>
-  </head>
-  <body>
-   <center><canvas id="main"></canvas></center>
-
-  <center> <h1 id="text1"></h1> </center>
-
-  </body>
+      <label>
+        tick: 1e2 <input type="range" min="100" max="10000" value="500" id="tick" step="100"/> 1e4
+      </label>
+      <button type="button">not used</button>
+    </menu>
+    </header>
+    <section id="botsList"></section>
+  </aside>
+</section>
+</body>
 </html>
